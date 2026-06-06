@@ -41,16 +41,16 @@ afterAll(() => {
 });
 
 describe("cli (commander)", () => {
-  it("--help 출력에 8 서브커맨드 모두 포함", () => {
+  it("--help 출력에 9 서브커맨드 모두 포함 (mcp 포함)", () => {
     const { stdout } = run(["--help"]);
-    for (const cmd of ["list", "create", "read", "set-meta", "add", "rename", "rm", "render"]) {
+    for (const cmd of ["list", "create", "read", "set-meta", "add", "rename", "rm", "render", "mcp"]) {
       expect(stdout).toContain(cmd);
     }
   });
 
-  it("--version → 0.0.0", () => {
+  it("--version → 0.0.1", () => {
     const { stdout } = run(["--version"]);
-    expect(stdout.trim()).toBe("0.0.0");
+    expect(stdout.trim()).toBe("0.0.1");
   });
 
   it("create + list + read 시나리오", () => {

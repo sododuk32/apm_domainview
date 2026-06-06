@@ -11,7 +11,7 @@ const program = new Command();
 program
   .name("apm-domainview")
   .description("Feature Tree — 도메인 지식을 가지(브랜치) 트리로 보관·조회")
-  .version("0.0.0");
+  .version("0.0.1");
 
 program
   .command("list")
@@ -114,6 +114,16 @@ program
       const outPath = path.join(workspaceRoot(), name, "index.html");
       await fs.writeFile(outPath, html, "utf8");
       console.log(`렌더링 완료: ${outPath}`);
+    });
+  });
+
+program
+  .command("mcp")
+  .description("MCP stdio 서버 시작 (AI 하네스에서 호출, apm.yml 의존 통해 자동)")
+  .action(async () => {
+    await run(async () => {
+      const { startMcpServer } = await import("./mcp-server.js");
+      await startMcpServer();
     });
   });
 

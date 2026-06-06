@@ -1,6 +1,6 @@
 {
   "name": "apm-domainview",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Feature Tree — store and view domain knowledge as a 3-level branch tree (CLI + optional MCP)",
   "type": "module",
   "bin": {
@@ -31,6 +31,7 @@
     "dist"
   ],
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "commander": "^12.1.0"
   },
   "devDependencies": {

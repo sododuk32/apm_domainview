@@ -1,0 +1,14 @@
+# 사용자 프로젝트 루트의 apm.yml 예시
+# (APM = microsoft/apm)
+#
+# 이 파일을 작성하고 `apm install` 하면 APM 이 감지된 모든 하네스
+# (Claude / Cursor / Copilot / Codex / Gemini / OpenCode / Windsurf)
+# 의 MCP 설정에 apm-domainview 가 자동 등록된다.
+
+name: my-project
+version: 1.0.0
+
+dependencies:
+  mcp:
+    - name: sododuk32/apm_domainview
+      transport: stdio
